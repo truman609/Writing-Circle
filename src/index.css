@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --color-paper: #fdfbf7;
+  --color-paper-dark: #f4f0e6;
+  --color-ink: #1c1917;
+  --color-ink-light: #57534e;
+  --color-ink-muted: #78716c;
+  --color-border-soft: #e7e5df;
+  --color-border-strong: #d6d3cd;
+  
+  --color-brand: #d97757;
+  --color-brand-hover: #c26142;
+
+  --color-maya-bg: #fffbeb;
+  --color-maya-text: #b45309;
+  
+  --color-roland-bg: #fef2f2;
+  --color-roland-text: #b91c1c;
+  
+  --color-priya-bg: #f5f3ff;
+  --color-priya-text: #6d28d9;
+  
+  --color-theo-bg: #f0f9ff;
+  --color-theo-text: #0369a1;
+  
+  --color-june-bg: #ecfdf5;
+  --color-june-text: #047857;
+  
+  --color-cass-bg: #fdf4ff;
+  --color-cass-text: #be185d;
+
+  --shadow-subtle: 0 4px 20px -2px rgba(28, 25, 23, 0.05);
+  --shadow-hover: 0 10px 30px -4px rgba(28, 25, 23, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-body antialiased selection:bg-brand/20 selection:text-ink;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Elegant Typing Indicator */
+.dot-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+}
+
+.dot-pulse span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.6;
+  animation: pulse 1.4s infinite ease-in-out both;
+}
+
+.dot-pulse span:nth-child(1) { animation-delay: -0.32s; }
+.dot-pulse span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes pulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}

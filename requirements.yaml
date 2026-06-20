@@ -1,0 +1,5 @@
+packages:
+  "framer-motion": "For elegant, smooth page transitions and staggered list animations essential for the premium editorial feel."
+  "clsx": "For class name merging"
+  "tailwind-merge": "For class name merging"
+  "lucide-react": "For subtle UI icons"
